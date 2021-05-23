@@ -1,7 +1,5 @@
 package task2;
 
-import java.util.Scanner;
-
 import utilities.DateTimeUtilities;
 import utilities.InputValidator;
 
@@ -12,9 +10,10 @@ public class Task2 {
 		boolean isYearNumberValid = false;
 		int monthNumber = 0;
 		int yearNumber = 0;
+		InputValidator input = new InputValidator();
 		do {
-			monthNumber = InputValidator.inputInteger("Enter month number: ");
-			yearNumber = InputValidator.inputInteger("Enter year number: ");
+			monthNumber = input.inputInteger("Enter month number: ");
+			yearNumber = input.inputInteger("Enter year number: ");
 			isMonthNumberValid = DateTimeUtilities.validateMonthNumber(monthNumber);
 			isYearNumberValid = DateTimeUtilities.validateYearNumber(yearNumber);
 		}while(!isMonthNumberValid && !isYearNumberValid);

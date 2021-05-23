@@ -7,12 +7,9 @@ import utilities.InputValidator;
 public class Task6 {
 	
 	static void taskLogic() {
-		boolean isValid = false;
 		int seconds = 0;
-		do {
-			seconds = InputValidator.inputInteger("Enter seconds:");
-			isValid = true;
-		}while(!isValid);
+		InputValidator input = new InputValidator();
+		seconds = input.inputInteger("Enter seconds:");
 		
 		int minutes = seconds / 60;
 		int hours = minutes / 60;

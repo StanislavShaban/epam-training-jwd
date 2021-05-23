@@ -10,27 +10,80 @@ public class InputValidator {
 		scan = new Scanner(System.in);
 	}
 	
-	public static int inputInteger(String outputMessage) {
+	public int inputInteger(String outputMessage) {
 		System.out.println(outputMessage);
+		int value = 0;
+		boolean isValid = false;
+		do {
+			try {
+				value = Integer.parseInt(scan.nextLine());
+				isValid = true;
+			}catch(NumberFormatException e) {
+				System.out.println("Enter a valid integer");
+			}
+			
+		}while(!isValid);
 		
-		while(scan.hasNextInt()) {
-			System.out.println("Enter valid integer number\n");
-			System.out.println(outputMessage);
-			scan.next();
-		}
-		
-		return scan.nextInt();
+		return value;
 	}
 	
-	public static double inputDouble(String outputMessage) {
+	public double inputDouble(String outputMessage) {
 		System.out.println(outputMessage);
+		double value = 0;
+		boolean isValid = false;
+		do {
+			try {
+				value = Double.parseDouble(scan.nextLine());
+				isValid = true;
+			}catch(NumberFormatException e) {
+				System.out.println("Enter a valid double");
+			}
+			
+		}while(!isValid);
 		
-		while(scan.hasNextDouble()) {
-			System.out.println("Enter valid double number\n");
-			System.out.println(outputMessage);
-			scan.next();
-		}
+		return value;
+	}
+	
+	public int inputPositiveInteger(String outputMessage) {
+		System.out.println(outputMessage);
+		int value = 0;
+		boolean isValid = false;
+		do {
+			try {
+				value = Integer.parseInt(scan.nextLine());
+				if(value >= 0) {
+					isValid = true;
+				}else {
+					System.out.println("value should be positive");
+				}
+				
+			}catch(NumberFormatException e) {
+				System.out.println("Enter a valid integer");
+			}
+			
+		}while(!isValid);
 		
-		return scan.nextDouble();
+		return value;
+	}
+	
+	public double inputPositiveDouble(String outputMessage) {
+		System.out.println(outputMessage);
+		double value = 0;
+		boolean isValid = false;
+		do {
+			try {
+				value = Double.parseDouble(scan.nextLine());
+				if(value >= 0) {
+					isValid = true;
+				}else {
+					System.out.println("value should be positive");
+				}
+			}catch(NumberFormatException e) {
+				System.out.println("Enter a valid double");
+			}
+			
+		}while(!isValid);
+		
+		return value;
 	}
 }

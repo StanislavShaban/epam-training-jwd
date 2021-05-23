@@ -1,14 +1,14 @@
 package task1;
 
 import java.lang.Math.*;
-import java.util.Scanner;
 
 import utilities.InputValidator;
 
 public class Task1 {
 	
 	static void taskLogic() {
-		double num = InputValidator.inputDouble("Enter Number");
+		InputValidator input = new InputValidator();
+		double num = input.inputDouble("Enter Number: ");
 		num = Math.pow(num, 2);
 		int lastDigit = (int)num%10;
 		

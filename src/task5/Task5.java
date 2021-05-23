@@ -8,12 +8,9 @@ import utilities.MathUtilities;
 public class Task5 {
 	
 	static void taskLogic() {
-		boolean isValid = false;
 		int number = 0;
-		do {
-			number = InputValidator.inputInteger("Enter number:");
-			isValid = true;
-		}while(!isValid);
+		InputValidator input = new InputValidator();
+		number = input.inputInteger("Enter number:");
 		
 		if(MathUtilities.isPerfectNumber(number)) {
 			System.out.println("true");

@@ -1,12 +1,9 @@
 package task7;
 
-import java.util.Scanner;
-
 import utilities.InputValidator;
 
 public class Task7 {
 	static void taskLogic() {
-		boolean isValid = false;
 		Task7 task7Instance = new Task7();
 		Point firstPoint;
 		Point secondPoint;
@@ -14,16 +11,16 @@ public class Task7 {
 		int y1 = 0;
 		int x2 = 0;
 		int y2 = 0;
-		do {
-			x1 = InputValidator.inputInteger("Enter point x1: ");
-			y1 = InputValidator.inputInteger("Enter point y1: ");
-			firstPoint = task7Instance.new Point(x1, y1);
-			x2 = InputValidator.inputInteger("Enter point x2: ");
-			y2 = InputValidator.inputInteger("Enter point y2: ");
-			secondPoint = task7Instance.new Point(x2, y2);
-			isValid = true;
-		}while(!isValid);
 		
+		InputValidator input = new InputValidator();
+		
+		x1 = input.inputInteger("Enter point x1: ");
+		y1 = input.inputInteger("Enter point y1: ");
+		firstPoint = task7Instance.new Point(x1, y1);
+		
+		x2 = input.inputInteger("Enter point x2: ");
+		y2 = input.inputInteger("Enter point y2: ");
+		secondPoint = task7Instance.new Point(x2, y2);
 		
 		System.out.println(firstPoint.getNearestPoint(secondPoint));
 		
@@ -88,7 +85,15 @@ public class Task7 {
 		public Point getNearestPoint(Point secondPoint) {
 			double firstPointDistance = this.getDistanceToThePoint();
 			double secondPointDistance = secondPoint.getDistanceToThePoint();
-			return firstPointDistance > secondPointDistance ? this : secondPoint;
+			
+			if(firstPointDistance > secondPointDistance) {
+				return this;
+			} else if(firstPointDistance < secondPointDistance) {
+				return secondPoint;
+			} else if(firstPointDistance == secondPointDistance) {
+				System.out.println("Points have equal distance");
+			}
+			return this;
 		}
 	}
 }

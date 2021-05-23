@@ -1,10 +1,14 @@
 package task8;
 
+import utilities.InputValidator;
+
 public class Task8 {
 	
 	static void taskLogic() {
 		int x = 0;
-		calculateFunction(x);
+		InputValidator input = new InputValidator();
+		x = input.inputInteger("Enter value: ");
+		System.out.println("Result: " + calculateFunction(x));
 		
 	}
 	
@@ -20,8 +24,7 @@ public class Task8 {
     }
 	
     private static double firstFunction(int x){
-        double result = -(Math.pow(x,2)) + 3 * x + 9;
-        return result;
+        return -(Math.pow(x,2)) + 3 * x + 9;
     }
     
     private static double secondFunction(int x){
@@ -29,7 +32,6 @@ public class Task8 {
         	return 0;
         }
         
-        double result = 1 / (Math.pow(x,3) - 6);
-        return result;
+        return 1 / (Math.pow(x,3) - 6);
     }
 }
