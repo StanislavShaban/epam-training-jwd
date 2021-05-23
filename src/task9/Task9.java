@@ -6,7 +6,7 @@ public class Task9 {
 
 	static void taskLogic() {
 		InputValidator input = new InputValidator();
-		double radius = input.inputDouble("Input radius: ");
+		double radius = input.inputPositiveDouble("Input radius: ");
 		System.out.println("Length: " + calculateLength(radius));
 		System.out.println("Area: " + calculateArea(radius));
 	}

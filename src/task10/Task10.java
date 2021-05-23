@@ -8,7 +8,7 @@ public class Task10 {
 		InputValidator input = new InputValidator();
 		int a = input.inputInteger("Enter segment start point: ");
 		int b = input.inputInteger("Enter segment end point: ");
-		int h = input.inputInteger("Enter segment step: ");
+		int h = input.inputPositiveInteger("Enter segment step: ");
 		
 		calculateBySteps(a, b, h);
 	}

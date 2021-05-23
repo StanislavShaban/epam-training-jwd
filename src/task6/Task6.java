@@ -9,7 +9,7 @@ public class Task6 {
 	static void taskLogic() {
 		int seconds = 0;
 		InputValidator input = new InputValidator();
-		seconds = input.inputInteger("Enter seconds:");
+		seconds = input.inputPositiveInteger("Enter seconds:");
 		
 		int minutes = seconds / 60;
 		int hours = minutes / 60;

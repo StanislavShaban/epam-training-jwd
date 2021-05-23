@@ -54,7 +54,8 @@ public class InputValidator {
 				if(value >= 0) {
 					isValid = true;
 				}else {
-					System.out.println("value should be positive");
+					System.out.println("value should be positive!");
+					System.out.println(outputMessage);
 				}
 				
 			}catch(NumberFormatException e) {
@@ -76,7 +77,8 @@ public class InputValidator {
 				if(value >= 0) {
 					isValid = true;
 				}else {
-					System.out.println("value should be positive");
+					System.out.println("value should be positive!");
+					System.out.println(outputMessage);
 				}
 			}catch(NumberFormatException e) {
 				System.out.println("Enter a valid double");

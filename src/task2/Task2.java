@@ -12,8 +12,8 @@ public class Task2 {
 		int yearNumber = 0;
 		InputValidator input = new InputValidator();
 		do {
-			monthNumber = input.inputInteger("Enter month number: ");
-			yearNumber = input.inputInteger("Enter year number: ");
+			monthNumber = input.inputPositiveInteger("Enter month number: ");
+			yearNumber = input.inputPositiveInteger("Enter year number: ");
 			isMonthNumberValid = DateTimeUtilities.validateMonthNumber(monthNumber);
 			isYearNumberValid = DateTimeUtilities.validateYearNumber(yearNumber);
 		}while(!isMonthNumberValid && !isYearNumberValid);

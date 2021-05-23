@@ -10,7 +10,7 @@ public class Task5 {
 	static void taskLogic() {
 		int number = 0;
 		InputValidator input = new InputValidator();
-		number = input.inputInteger("Enter number:");
+		number = input.inputPositiveInteger("Enter number:");
 		
 		if(MathUtilities.isPerfectNumber(number)) {
 			System.out.println("true");

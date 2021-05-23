@@ -8,7 +8,7 @@ public class Task3 {
 		boolean isValid = false;
 		double squareArea = 0.0;
 		InputValidator input = new InputValidator();
-		squareArea = input.inputDouble("Enter square area: ");
+		squareArea = input.inputPositiveDouble("Enter square area: ");
 		double squareSide = Math.sqrt(squareArea);
 		double innerSquareSide = squareSide/Math.sqrt(2);
 		double innerSquareArea = Math.pow(innerSquareSide, 2);
